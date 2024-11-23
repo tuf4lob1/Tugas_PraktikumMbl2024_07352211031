@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'screen/Satu.dart';
 
 void main() {
   runApp(const ECommerceApp());
@@ -24,6 +25,7 @@ class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
 
   @override
+
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: const Color(0xFFF5F5F5),
@@ -34,11 +36,19 @@ class HomeScreen extends StatelessWidget {
         ),
         title: const Text("E-Commerce"),
         centerTitle: true,
-        actions: const [
-          Icon(Icons.notifications, size: 24),
-          SizedBox(width: 16),
-          Icon(Icons.shopping_cart, size: 24),
-          SizedBox(width: 16),
+        actions: [
+          IconButton(
+  icon: const Icon(Icons.shopping_cart, size: 24),
+  onPressed: () {
+    Navigator.push(
+              context,
+                MaterialPageRoute(builder: (context) => Satu()),
+                );
+
+},
+),
+
+          const SizedBox(width: 16),
         ],
       ),
       body: SingleChildScrollView(
