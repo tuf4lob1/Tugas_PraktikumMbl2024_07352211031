@@ -1,0 +1,40 @@
+plugins {
+    id "com.android.application"
+    id 'com.google.gms.google-services' // FlutterFire Configuration
+    id "kotlin-android"
+    id "dev.flutter.flutter-gradle-plugin" // The Flutter Gradle Plugin must be applied last
+}
+
+android {
+    namespace = "com.example.petcare"
+    compileSdk = 34 // Pastikan compileSdk sesuai dengan versi yang didukung oleh proyek Anda
+
+    ndkVersion = flutter.ndkVersion
+
+    compileOptions {
+        sourceCompatibility = JavaVersion.VERSION_1_8
+        targetCompatibility = JavaVersion.VERSION_1_8
+    }
+
+    kotlinOptions {
+        jvmTarget = "1.8"
+    }
+
+    defaultConfig {
+        applicationId = "com.example.petcare"
+        minSdk = 23 // Pastikan minSdk sesuai dengan kebutuhan plugin seperti Firebase
+        targetSdk = 34 // Sesuaikan dengan compileSdk
+        versionCode = 14
+        versionName = "1.0"
+    }
+
+    buildTypes {
+        release {
+            signingConfig = signingConfigs.debug
+        }
+    }
+}
+
+flutter {
+    source = "../.."
+}
